@@ -15,6 +15,7 @@ def printBoard(board):
 	print(board['b_l'] + '|' + board['b_m'] + '|' + board['b_r'])
 	print("\n\n")
 
+
 def play():
 	movesLeft = 9
 	hasWon = False
@@ -28,6 +29,7 @@ def play():
 			movesLeft -= 1
 			if winCond(theBoard) == True:
 				hasWon = True
+				gameWon()
 		else:
 			break
 		
@@ -37,11 +39,10 @@ def play():
 			if theBoard[moves[pcMove]] == ' ':
 				theBoard[moves[pcMove]] = 'O'
 				movesLeft -= 1
-				hasWon = True
-
-			else:
+				if winCond(theBoard) == True:
+					hasWon = True
+					gameWon()
 				break
-
 
 def winCond(board):
 
@@ -138,5 +139,20 @@ def winCond(board):
 		else:
 			return False
 
+
+def gameWon():
+	print('#######################')
+	print('###### Game Over ######')
+	print('#######################')
+	print('\n\nPlay Again?\n')
+	ans = input('Y / N ?')
+	if ans == 'y' or 'Y':
+		for i in theBoard:
+			theBoard[i] = ' '
+		play()
+	elif ans == 'n' or 'N':
+		print('ok')
+	else:
+		print('Sorry i didnt get that..')
 
 play()
