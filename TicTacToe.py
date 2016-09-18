@@ -83,7 +83,7 @@ def play():
                     if winCond(theBoard) == True:
                         hasWon = True
                         gameWon()
-                    break
+
 
 
 def winCond(board):
