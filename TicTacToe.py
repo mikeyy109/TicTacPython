@@ -36,17 +36,6 @@ def play():
             break
 
         # AI
-        '''while movesLeft >= 1 and hasWon == False:
-			pcMove = random.randint(0,7)
-			if theBoard[moves[pcMove]] == ' ':
-				theBoard[moves[pcMove]] = 'O'
-				movesLeft -= 1
-				if winCond(theBoard) == True:
-					hasWon = True
-					gameWon()
-				break'''
-
-        # AI MK2
         if movesLeft >= 1 and hasWon == False:
             moveTaken = False
 
